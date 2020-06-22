@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="843.0" prefWidth="1147.0" style="-fx-background-color: #0db9c5;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <TabPane prefHeight="843.0" prefWidth="1147.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Products">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="766.0" prefWidth="1046.0">
+                     <children>
+                        <ComboBox fx:id="centersComboBox" layoutX="61.0" layoutY="29.0" onAction="#comboBoxWasUpdated" prefWidth="150.0" style="-fx-background-color: white;" />
+                        <Label layoutX="14.0" layoutY="33.0" text="Centers" textFill="WHITE" />
+                        <Label layoutX="239.0" layoutY="33.0" text="product list" textFill="WHITE" />
+                        <TableView fx:id="productTable" layoutX="322.0" layoutY="29.0" prefHeight="327.0" prefWidth="309.0">
+                          <columns>
+                            <TableColumn fx:id="nameColumn" prefWidth="75.0" text="Name" />
+                            <TableColumn fx:id="priceColumn" prefWidth="75.0" text="Price" />
+                              <TableColumn fx:id="quantityColumn" prefWidth="75.0" text="Quantity" />
+                              <TableColumn fx:id="centerColumn" prefWidth="84.0" text="Center" />
+                          </columns>
+                        </TableView>
+                        <TextField fx:id="search" layoutX="322.0" layoutY="364.0" onAction="#setSearch" promptText="search" />
+                        <Button fx:id="sortByNameBTN" layoutX="218.0" layoutY="57.0" mnemonicParsing="false" onAction="#setSortByNameBTN" prefHeight="25.0" prefWidth="101.0" text="Sort by name" textAlignment="CENTER" />
+                        <Button fx:id="sortByQuantityBTN" layoutX="218.0" layoutY="90.0" mnemonicParsing="false" onAction="#setSortByQuantityBTN" text="Sort by quantity" />
+                        <Button fx:id="sortByPriceBTN" layoutX="218.0" layoutY="126.0" mnemonicParsing="false" onAction="#setSortByPriceBTN" prefHeight="25.0" prefWidth="101.0" text="Sort by price" />
+                        <Button layoutX="483.0" layoutY="364.0" mnemonicParsing="false" onAction="#setAddToBasketBTN" prefHeight="25.0" prefWidth="148.0" text="Add to basket" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Basket">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="basketTable" layoutX="23.0" layoutY="38.0" prefHeight="355.0" prefWidth="227.0">
+                          <columns>
+                            <TableColumn fx:id="nameColumnBasket" prefWidth="75.0" text="Name" />
+                            <TableColumn fx:id="priceColumnBasket" prefWidth="75.0" text="Price" />
+                              <TableColumn fx:id="centerColumnBasket" prefWidth="75.0" text="From" />
+                          </columns>
+                        </TableView>
+                        <Label fx:id="totalCost" layoutX="260.0" layoutY="38.0" text="Total cost:" textFill="WHITE" />
+                        <Label fx:id="itemsNum" layoutX="260.0" layoutY="55.0" text="Items" textFill="WHITE" />
+                        <Button layoutX="105.0" layoutY="407.0" mnemonicParsing="false" onAction="#setRemoveBTN" prefHeight="25.0" prefWidth="63.0" text="Remove" />
+                        <Button layoutX="260.0" layoutY="86.0" mnemonicParsing="false" onAction="#setPurchaseBTN" prefHeight="25.0" prefWidth="88.0" text="Purchase" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</Pane>
